@@ -1,0 +1,580 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+body{
+    background-image: url(../imagenes/otras/fondo_2.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+
+:root {
+    --blanco: #ffffff;
+    --negro: #000000;
+    --cabecera_cuerpos: #ddc49490;
+    --navegador: #d4b27234;
+    --barraNav: #90784c63;
+    --subBarraNav: #e4be7870;
+    --vueltaCarta: #e9d2a8;
+    /* TEXTO */
+    --titutos: 'Gamja Flower', cursive;
+    --textos: 'Arapey', serif;
+}
+
+
+/* //===============  GENERALES */
+h1 {
+    font-family: var(--titutos);
+    font-size: 5em;
+}
+
+h2 {
+    font-family: var(--titutos);
+    font-size: 4em;
+}
+
+h3 {
+    font-family: var(--titutos);
+    font-size: 2em;
+}
+
+h4 {
+    font-family: var(--titutos);
+    font-size: 1.8em;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+
+/* //===============  CABECERA */
+
+header {
+    display: block;
+    justify-content: space-evenly;
+    background-color: var(--navegador);
+    padding: 2rem;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    header{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--navegador);
+    padding: 2rem;
+    text-align: center;
+    }
+}
+@media (min-width: 992px) {
+    header{
+    display: flex;
+    justify-content: center;
+    background-color: var(--navegador);
+    padding: 2rem;
+    text-align: center;
+    }
+}
+
+.logo {
+    width: 5em;
+    height: 5em;
+}
+
+/* //==========NAVEGADOR MOVILE */
+
+.cajaNavegacionMovil{
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 500;
+}
+
+@media (min-width: 768px) {
+    .cajaNavegacionMovil{
+        display: none;
+    }
+}
+.main-nav{
+    height: auto;
+    top: 0;
+}
+
+.nav-bar{
+    background-color: var(--barraNav);
+    padding: 20px;
+    display: block;
+    color: white;
+    cursor: pointer;
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .nav-bar{
+        text-align: left;
+    }
+}
+
+.menu, .submenu{
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
+.menu{
+    background-color: var(--navegador);
+    width: 100%;
+    display: none;
+    transition: all 0.5s;
+    
+}
+
+.menu__link{
+    display: block;
+    padding: 20px;
+    color: var(--blanco);
+    font-size: 2em;
+    text-decoration: none;
+    text-align: left;
+    background-color: var(--subBarraNav);
+}
+.menu__link:hover{
+    background-color: var(--subBarraNav);
+    color: black;
+}
+.submenu .menu__link:hover{
+    background-color: var(--cabecera_cuerpos);
+}
+.submenu{
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.mostrar {
+    display: block;
+    margin-left: 0;
+}
+.submenu .menu__link{
+    background-color: var(--barraNav);
+    padding-left: 80px;
+}
+
+@media (min-width: 552px) {
+    .menu__link{
+        justify-content: center;
+        margin: auto;
+        text-align: center;
+    }
+}
+@media (min-width: 992px) {
+    .nav-bar{
+        display: none;
+    }
+    .menu{
+        margin-left: 0;
+        display: flex;
+    }
+    .container_submenu{
+        position: relative;
+        
+    }
+    .submenu{
+        position: absolute;
+        top: 60px;
+        width: 200px;
+        overflow: visible;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .container-submenu:hover .submenu{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+/* //==========ORDENADOR  NAVEGADOR */
+.cajaNavegadroOrdenador{
+    display: none;
+}
+.cajaNavegadroOrdenador {
+    background-color: var(--barraNav);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.cajaNavegadroOrdenador ul{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 0rem;
+}
+
+@media (min-width: 768px) {
+    .cajaNavegadroOrdenador ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 0rem;
+    }
+}
+
+.cajaNavegadroOrdenador a {
+    color: var(--blanco);
+    justify-content: center;
+    font-size: 3rem;
+    font-family: var(--titutos);
+    text-transform: capitalize;
+    padding: 2rem; 
+}
+
+.cajaNavegadroOrdenador a:hover {
+    transition: 2s;
+    color: var(--negro);
+} 
+
+@media (min-width: 768px) {
+    .cajaNavegadroOrdenador{
+        display: block;
+    }
+}
+
+/* //===============  CUERPO  y SECIONES*/
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    z-index: 0;
+    position: relative;
+    background-color: transparent;
+}
+
+section{
+    background-color: var(--navegador);
+    border-radius: 25px;
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+/* //===TITUTLOS */
+.titulos{
+    display: flex;
+    width: 60%;
+    margin: auto;
+    justify-content: center;
+    padding: 0.5rem;
+    margin-top: 2rem;
+    background-color: var(--cabecera_cuerpos);
+    border-radius: 50px;
+}
+
+.titular{
+    font-size: 4em;
+    color: var(--blanco);
+}
+
+
+/* ////CARRUSEL */
+
+.carousel{
+    display: none;
+    background-color: var(--subBarraNav);
+    padding: 3rem;
+    border-radius: 25px;
+}
+
+@media (min-width: 992px) {
+    .carousel{
+        display: block;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+/* ///==================== CAFES */
+
+.cafes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; 
+}
+
+
+.caja_cafe{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+/* /// Tipo CAFE */
+
+.producto_Card{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background-color: var(--navegador);
+    box-shadow: 0px 7px 7px rgba(8, 8, 8, 0.25);
+    border-radius: 25px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+.producto_Card:hover{
+    transform: translate(-50%, -50%) rotateY(180deg);
+}
+
+.texto_vuelta{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    background: var(--cabecera_cuerpos);
+    border: 1px solid var(--blanco);
+    box-shadow: 0px 7px 7px rgba(218, 213, 213, 0.199);
+    border-radius: 0px 0px 25px 25px;
+}
+.texto_vuelta div{
+    width: 80%;
+    margin: auto;
+}
+
+.imagen_container{
+    width: 80%;
+    padding: 2rem;
+    border-radius: 25px 25px 0px 0px;
+    margin: auto;
+    text-align: center;
+    line-height: auto;
+    
+}
+
+.flip-card-back{
+    position: absolute;
+    padding: 3rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: var(--vueltaCarta);
+    transform:rotateY(180deg);
+    color: rgb(0, 0, 0);
+}
+
+.foto_cafe{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.precio{
+    font-size: 1.8em;
+    padding: 0.5rem;
+    background-color: var(--blanco);
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    border-radius: 25px;
+}
+
+
+/* ///E=====EVENTOS */
+
+.cajaEventos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.eventos{
+    padding: 2rem;
+    text-align: center;
+}
+.eventos li{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: auto;
+}
+.eventos li a{
+    text-decoration: none;
+    color: var(--negro);
+    font-family: var(--textos);
+    font-size: 2em;
+}
+.eventos li a:hover{
+    color: var(--blanco);
+}
+.calendario{
+    padding: 2rem;
+    text-align: center;
+    margin: auto;
+}
+
+.imgcalendario{
+    width: 100%;
+    height: 300px;
+    padding: 1rem;
+}
+
+
+/* //Formulario */
+
+.formulario{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    background-color: var(--cabecera_cuerpos);
+    padding: 2rem; 
+    margin-top: 2rem;
+}
+
+
+@media (min-width: 768px) {
+    .formulario{
+        display: flex;
+        width: 50%;
+    text-align: center;
+    flex-direction: column;
+    margin: auto;
+    background-color: var(--cabecera_cuerpos);
+    padding: 2rem; 
+    margin-top: 2rem;
+    }
+}
+.casillas{
+        display: flex;
+        margin: auto;
+        margin-bottom: 1rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    
+}
+@media (min-width: 768px) {
+    .casillas{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+}
+
+
+.casillas input{
+    margin-left: 2rem;
+}
+
+.botonEnviar{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 0.2rem;
+}
+.boton{
+    padding: 0.5rem;
+}
+
+
+/* //=====PIES D EPAGINA */
+
+
+.enlacesRecursos{
+    padding: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3rem;
+    margin-top: 2rem;
+  
+}
+.enlacesRecursos a{
+    font-size: 2em;
+    font-family: var(--textos);
+    text-decoration: none;
+    color: var(--blanco);
+    transition: 2s;
+}
+.enlacesRecursos a:hover{
+    color: var(--negro);
+    font-size: 3em;
+    transition: 2s;
+}
+
+
+/* ///===FOOTER */
+
+footer{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: var(--cabecera_cuerpos);
+}
+
+.dibujos{
+    background-color: red;
+    align-items: center;
+    text-align: center;
+}
+
+.letrasLogo{
+    text-decoration: none;
+}
+
+.logoPie{
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.logoSubir{
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.iconoSubir{
+    font-size: 7em;
+    color: var(--blanco);
+    color: whitesmoke;
+    transition: 1s;
+}
+.iconoSubir:hover{
+    font-size: 7em;
+    color: var(--barraNav);
+    transition: 2s;
+}
+
+
